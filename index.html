@@ -2,6 +2,10 @@
 
 <head>
   <style>
+    .grids {
+  background-size: 12px 24px;
+  background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
+}
     div {
       font-family: monospace;
       font-size: 12px;
@@ -20,22 +24,22 @@
 
 <body>
   <div style="width:600px;height:800px;float:left" id="container">
-    <div contenteditable="true" style="width:100%;height:5%;">
+    <div contenteditable="true" style="width:100%;height:5%;" class="grids">
       This text can be edited by the user.
     </div>
     <div style="clear:both"></div>
-    <div contenteditable="true" style="width:30%;height:75%;float:left">
+    <div contenteditable="true" style="width:30%;height:75%;float:left" class="grids">
       This text can be edited by the user.
     </div>
-    <div contenteditable="true" style="width:70%;height:75%;float:left">
+    <div contenteditable="true" style="width:70%;height:75%;float:left" class="grids">
       This text can be edited by the user.
     </div>
-    <div contenteditable="true" style="width:100%;height:20%;clear:both">
+    <div contenteditable="true" style="width:100%;height:20%;clear:both" class="grids">
       This text can be edited by the user.
     </div>
 
   </div>
-  <div contenteditable="true" style="width:120px; float:left">
+  <div contenteditable="true" style="width:120px; float:left" class="grids">
   Record:1 <br/>
   Reduce:1<br/>
   Recite:1<br/>
