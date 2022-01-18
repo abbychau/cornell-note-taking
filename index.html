@@ -2,18 +2,24 @@
 
 <head>
   <style>
+    div {
+      font-family: monospace;
+      font-size: 12px;
+    }
     #container,
     #container>div {
       outline: 1px solid black;
       padding: 2px;
-      font-family: monospace;
-      font-size: 12px;
+      box-sizing: border-box;
+    }
+    #container>div{
+      overflow: auto;
     }
   </style>
 </head>
 
 <body>
-  <div style="width:600px;height:800px" id="container">
+  <div style="width:600px;height:800px;float:left" id="container">
     <div contenteditable="true" style="width:100%;height:5%;">
       This text can be edited by the user.
     </div>
@@ -29,6 +35,15 @@
     </div>
 
   </div>
+  <div contenteditable="true" style="width:120px; float:left">
+  Record:1 <br/>
+  Reduce:1<br/>
+  Recite:1<br/>
+  Reflect:1<br/>
+  Review:1
+  </div>
+  <div style="clear:both"></div>
+
 </body>
 
 </html>
