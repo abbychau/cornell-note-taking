@@ -27,17 +27,17 @@
 
 <body>
   <div style="width:600px;height:800px;float:left" id="container">
-    <div contenteditable="true" style="width:100%;height:5%;" class="grids">
+    <div contenteditable="true" style="width:100%;height:5%;" class="grids" id="subjectContainer">
       Date: 2000-1-3 Title: nothing
     </div>
     <div style="clear:both"></div>
-    <div contenteditable="true" style="width:30%;height:75%;float:left" class="grids">
+    <div contenteditable="true" style="width:30%;height:75%;float:left" class="grids" id="cueContainer">
       How to surprise players
     </div>
-    <div contenteditable="true" style="width:70%;height:75%;float:left" class="grids">
+    <div contenteditable="true" style="width:70%;height:75%;float:left" class="grids" id="mainContainer">
       1. Set them an anchor
     </div>
-    <div contenteditable="true" style="width:100%;height:20%;clear:both" class="grids">
+    <div contenteditable="true" style="width:100%;height:20%;clear:both" class="grids" id="summaryContainer">
       Summary: 
       You can set anchors but don't be boring
     </div>
@@ -62,7 +62,6 @@
   const summaryContainer = document.getElementById("summaryContainer")
   for(const con of [subjectContainer,cueContainer,mainContainer,summaryContainer]){
     con.innerHTML = con.innerHTML.trim()
-
   }
 
   </script>
