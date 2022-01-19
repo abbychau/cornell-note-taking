@@ -34,6 +34,7 @@
     </div>
     <div style="clear:both"></div>
     <div contenteditable="true" style="width:30%;height:75%;float:left" class="grids" id="cueContainer"></div>
+    <div contenteditable="true" style="width:70%;height:75%;float:left" class="grids" id="mainContainer"></div>
     <div contenteditable="true" style="width:100%;height:20%;clear:both" class="grids" id="summaryContainer"></div>
   </div>
   <div contenteditable="true" style="width:120px; 
@@ -50,7 +51,7 @@
   const summaryContainer = document.getElementById("summaryContainer")
   const scoreContainer = document.getElementById("scoreContainer")
   for (const con of [subjectContainer, cueContainer, mainContainer, summaryContainer]) {
-    con.innerHTML = con.innerHTML.trim()
+    //con.innerHTML = con.innerHTML.trim()
   }
   function exporting() {
 
