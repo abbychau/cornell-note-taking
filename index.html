@@ -9,20 +9,20 @@
       -webkit-user-modify: read-write-plaintext-only;
     }
 
-    div,textarea {
+    textarea {
       font-family: monospace;
       font-size: 12px;
       line-height: 14px;
     }
 
     #container,
-    #container>div,#container>textarea {
+    #container>textarea {
       outline: 1px solid black;
       padding: 2px;
       box-sizing: border-box;
     }
 
-    #container>div,#container>textarea {
+    #container>textarea {
       overflow: auto;
     }
   </style>
@@ -30,14 +30,13 @@
 
 <body>
   <div style="width:600px;height:800px;float:left" id="container">
-    <div style="width:100%;height:5%;" id="subjectContainer">
-    </div>
+    <textarea style="width:100%;height:5%;" id="subjectContainer"></textarea>
     <div style="clear:both"></div>
-    <div style="width:30%;height:75%;float:left" id="cueContainer"></div>
-    <div style="width:70%;height:75%;float:left" id="mainContainer"></div>
-    <div style="width:100%;height:20%;clear:both" id="summaryContainer"></div>
+    <textarea style="width:30%;height:75%;float:left" id="cueContainer"></textarea>
+    <textarea style="width:70%;height:75%;float:left" id="mainContainer"></textarea>
+    <textarea style="width:100%;height:20%;clear:both" id="summaryContainer"></textarea>
   </div>
-  <div style="width:120px; float:left; padding:2px; box-sizing:border-box; outline:1px solid black;margin: 2px 0 0 1px; border-radius: 0 3px 3px 0;" id="scoreContainer"></div>
+  <textarea style="width:120px; float:left; padding:2px; box-sizing:border-box; outline:1px solid black;margin: 2px 0 0 1px; border-radius: 0 3px 3px 0;" id="scoreContainer"></textarea>
   <div style="clear:both"></div>
 
 </body>
@@ -50,7 +49,6 @@
   const containers = [subjectContainer, cueContainer, mainContainer, summaryContainer,scoreContainer];
   containers.forEach(e=>{
     e.classList.add("grids")
-    e.setAttribute("contenteditable",true)
   })
   function exporting() {
     console.log(containers.map(e=>e.innerHTML))
