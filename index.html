@@ -1,8 +1,11 @@
 <html>
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5R Notes</title>
     <style>
       .grids {
-        background-size: 7.26px 14px;
+        background-size: 6.64px 14px;
         background-image: radial-gradient(
           circle,
           black 0.5px,
@@ -44,6 +47,9 @@
       .clear {
         clear: both;
       }
+      body {
+        width: 850px;
+      }
     </style>
   </head>
 
@@ -54,6 +60,10 @@
         <a data-note="2">Second Run</a>
       </div>
       <div style="bottom: 15px; position: absolute; width: 120px" class="tabs">
+        <!-- checkbox to toggle grid class-->
+        <div style="text-align: right; padding: 0 6px 0 0">
+          <input type="checkbox" id="grid" />Grid
+        </div>
         <a data-note="1">Tags #</a>
         <div class="clear"></div>
       </div>
@@ -98,15 +108,15 @@
     const mainContainer = document.getElementById("mainContainer");
     const summaryContainer = document.getElementById("summaryContainer");
     const tagContainer = document.getElementById("tagContainer");
+    const gridCheckbox = document.getElementById("grid");
+
     const containers = [
       subjectContainer,
       cueContainer,
       mainContainer,
       summaryContainer,
     ];
-    containers.forEach((e) => {
-      e.classList.add("grids");
-    });
+
     function exporting() {
       console.log(containers.map((e) => e.value));
     }
@@ -304,6 +314,16 @@
       });
       tagContainer.innerHTML = res;
     }
+    //on click grid checkbox, toggle grids classes for containers
+    gridCheckbox.addEventListener("click", () => {
+      containers.forEach((e) => {
+        if (gridCheckbox.checked) {
+          e.classList.add("grids");
+        } else {
+          e.classList.remove("grids");
+        }
+      });
+    });
     fetch("./data.json")
       .then((response) => response.json())
       .then((data) => {
