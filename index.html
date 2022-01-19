@@ -9,20 +9,20 @@
       -webkit-user-modify: read-write-plaintext-only;
     }
 
-    div {
+    div,textarea {
       font-family: monospace;
       font-size: 12px;
       line-height: 14px;
     }
 
     #container,
-    #container>div {
+    #container>div,#container>textarea {
       outline: 1px solid black;
       padding: 2px;
       box-sizing: border-box;
     }
 
-    #container>div {
+    #container>div,#container>textarea {
       overflow: auto;
     }
   </style>
