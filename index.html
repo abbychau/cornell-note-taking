@@ -16,7 +16,9 @@
         background-position: -2px -6px;
         -webkit-user-modify: read-write-plaintext-only;
       }
-
+      body {
+        margin: 1em auto;
+      }
       body,
       textarea {
         font-family: monospace;
@@ -325,6 +327,18 @@
           }
         });
       });
+      var textareas = document.getElementsByTagName('textarea');
+      var count = textareas.length;
+      for(var i=0;i<count;i++){
+          textareas[i].onkeydown = function(e){
+              if(e.keyCode==9 || e.which==9){
+                  e.preventDefault();
+                  var s = this.selectionStart;
+                  this.value = this.value.substring(0,this.selectionStart) + "    " + this.value.substring(this.selectionEnd);
+                  this.selectionEnd = s+1; 
+              }
+          }
+      }
       fetch("./data.json")
         .then((response) => response.json())
         .then((data) => {
