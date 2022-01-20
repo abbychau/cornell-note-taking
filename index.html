@@ -15,6 +15,7 @@
         );
         background-position: -2px -6px;
         -webkit-user-modify: read-write-plaintext-only;
+        -moz-user-modify: read-write-plaintext-only;
       }
       body {
         margin: 1em auto;
@@ -119,7 +120,9 @@
         mainContainer,
         summaryContainer,
       ];
-  
+      containers.forEach(e=>{
+        //e.setAttribute("contenteditable",true)
+      })
       function exporting() {
         console.log(containers.map((e) => e.value));
       }
